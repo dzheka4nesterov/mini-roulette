@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мини-рулетка</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+<h1>Мини-рулетка</h1>
+<main>
+<section id="players">
+<h2>Игроки</h2>
+<div class="player" id="player1">
+<h3>Игрок 1</h3>
+<p>Баланс: <span id="balance1">1000</span></p>
+</div>
+<div class="player" id="player2">
+<h3>Игрок 2</h3>
+<p>Баланс: <span id="balance2">1000</span></p>
+</div>
+<div class="player" id="player3">
+<h3>Игрок 3</h3>
+<p>Баланс: <span id="balance3">1000</span></p>
+</div>
+</section>
+<section id="game">
+<h2>Игровое поле</h2>
+<div id="roulette">
+<p>Здесь будет рулетка</p>
+</div>
+<p>
+Выпавшее число:
+<span id="result">—</span>
+</p>
+<button type="button" id="spin-btn">
+Крутить рулетку
+</button>
+</section>
+<section id="betting">
+<h2>Сделать ставку</h2>
+<form id="bet-form">
+<label for="player-select">Игрок:</label>
+<select id="player-select" required>
+<option value="1">Игрок 1</option>
+<option value="2">Игрок 2</option>
+<option value="3">Игрок 3</option>
+</select>
+<label for="bet-type">Тип ставки:</label>
+<select id="bet-type" required>
+<option value="red">Красное</option>
+<option value="black">Чёрное</option>
+<option value="number">Число</option>
+</select>
+<label for="bet-number">Число (если выбрано):</label>
+<input type="number" id="bet-number" min="0" max="36">
+<label for="bet-amount">Сумма ставки:</label>
+<input type="number" id="bet-amount" min="1" required>
+<button type="submit">
+Сделать ставку
+</button>
+</form>
+</section>
+<section id="bets">
+<h2>Текущие ставки</h2>
+<table>
+<thead>
+<tr>
+<th>Игрок</th>
+<th>Ставка</th>
+<th>Сумма</th>
+</tr>
+</thead>
+<tbody id="bets-body">
+</tbody>
+</table>
+</section>
+<section id="history">
+<h2>История игр</h2>
+<table>
+<thead>
+<tr>
+<th>Раунд</th>
+<th>Результат</th>
+<th>Победитель</th>
+</tr>
+</thead>
+<tbody id="history-body">
+</tbody>
+</table>
+</section>
+<section id="controls">
+<h2>Управление игрой</h2>
+<button type="button" id="new-game-btn">
+Новая игра
+</button>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,277 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    grid-template-areas:
+        "players players"
+        "game bets"
+        "betting history"
+        "controls controls";
+
+    align-items: start;
+}
+
+#players {
+    grid-area: players;
+}
+
+#game {
+    grid-area: game;
+}
+
+#betting {
+    grid-area: betting;
+}
+
+#bets {
+    grid-area: bets;
+}
+
+#history {
+    grid-area: history;
+}
+
+#controls {
+    grid-area: controls;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    min-width: 0;
+}
+
+#players {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+#players h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+.player {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.player h3 {
+    margin-top: 0;
+}
+
+.player p {
+    margin-bottom: 0;
+}
+
+.player span {
+    color: #16a34a;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#game {
+    text-align: center;
+}
+
+#roulette {
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 1 / 1;
+
+    margin: 20px auto;
+
+    background-color: #f1f5f9;
+    border: 2px dashed #cbd5e1;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#bet-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+
+    font-size: 16px;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 1px;
+}
+
+button {
+    width: 100%;
+    padding: 12px 20px;
+
+    background-color: #2563eb;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+button:active {
+    background-color: #1e40af;
+}
+
+button:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+#new-game-btn {
+    width: auto;
+    background-color: #475569;
+}
+
+#new-game-btn:hover {
+    background-color: #334155;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    overflow-wrap: anywhere;
+}
+
+th {
+    background-color: #f1f5f9;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tbody tr:hover {
+    background-color: #e2e8f0;
+}
+
+#controls {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "players"
+            "game"
+            "betting"
+            "bets"
+            "history"
+            "controls";
+
+        gap: 15px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #players {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #new-game-btn {
+        width: 100%;
+    }
+}
